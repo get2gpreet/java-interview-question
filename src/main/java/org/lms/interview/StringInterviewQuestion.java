@@ -62,10 +62,36 @@ public class StringInterviewQuestion {
 
     }
 
+    private static void equalityOfTwoArrays(int[] arrayOne, int[] arrayTwo) {
+        boolean equal = true;
+        if (arrayOne.length != arrayTwo.length) {
+            equal = false;
+        }else  {
+            for (int i = 0; i < arrayOne.length; i++) {
+                if (arrayOne[i] == arrayTwo[i]) {
+                    equal = true;
+                }
+            }
+        }
+        System.out.println(equal ? "Array is equal":" Array is not equal");
+    }
+
+    private static void equalityOfTwoArraysUsingCollection(String[] s1, String[] s2) {
+        System.out.println(Arrays.equals(s1,s2) ? "Arrays are equal" : "Arrays are not equal");
+    }
 
     public static void main(String[] args) {
         System.out.println("************************");
 
+//        String[] s1 = {"java", "j2ee", "struts", "hibernate"};
+//        String[] s2 = {"jsp", "spring", "jdbc", "hibernate"};
+//        String[] s3 = {"java", "j2ee", "struts", "hibernate"};
+//        equalityOfTwoArraysUsingCollection(s1,s2);
+//        equalityOfTwoArraysUsingCollection(s1,s3);
+
+//        int[] arrayOne = {2, 5, 1, 7, 4};
+//        int[] arrayTwo = {2, 5, 1, 7, 4};
+//        equalityOfTwoArrays(arrayOne,arrayTwo);
 
         //String input = "Butter";
         //duplicateCharCount(input);
@@ -82,6 +108,8 @@ public class StringInterviewQuestion {
         //checkIfStringIsPalindrome(list);
         System.out.println("************************");
     }
+
+
 
 
 }

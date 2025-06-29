@@ -5,14 +5,55 @@ import java.util.*;
 public class StringInterviewQuestion {
 
     public static void main(String[] args) {
-        String str[] = {"hello", "world", "rotor", "1v1"};
-        List<String> list = Arrays.asList(str);
 
 
 
 
 
+        //pyramid of numbers
+        printPyramid(9);
+
+        //String input = "Enter input string to be cleaned from white spaces...!";
+        //RemoveWhiteSpaces
+        //removeWhiteSpaces(input);
+
+        //String str[] = {"hello", "world", "rotor", "1v1"};
+        //List<String> list = Arrays.asList(str);
         //checkIfStringIsPalindrome(list);
+    }
+
+    private static void printPyramid(int noOfRows) {
+        int rowCount = 1;
+        System.out.println("Here Is Your Pyramid");
+        //Implementing the logic
+        for (int i = noOfRows; i > 0; i--)
+        {
+            //Printing i spaces at the beginning of each row
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print(" ");
+            }
+            //Printing 'rowCount' value 'rowCount' times at the end of each row
+            for (int j = 1; j <= rowCount; j++)
+            {
+                System.out.print(rowCount+" ");
+            }
+            System.out.println();
+            //Incrementing the rowCount
+            rowCount++;
+        }
+    }
+
+    private static void removeWhiteSpaces(String input) {
+        //String withoutWhiteSpaces = input.replaceAll("\\s+", "");
+        String withoutWhiteSpaces = "";
+        char[] charArray = input.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] != ' ' || charArray[i] == '\n') {
+                withoutWhiteSpaces = withoutWhiteSpaces + charArray[i];
+            }
+        }
+        System.out.println(withoutWhiteSpaces);
     }
 
     private static void checkIfStringIsPalindrome(List<String> list) {

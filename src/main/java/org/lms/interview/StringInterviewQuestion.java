@@ -4,24 +4,6 @@ import java.util.*;
 
 public class StringInterviewQuestion {
 
-    public static void main(String[] args) {
-
-
-
-
-
-        //pyramid of numbers
-        printPyramid(9);
-
-        //String input = "Enter input string to be cleaned from white spaces...!";
-        //RemoveWhiteSpaces
-        //removeWhiteSpaces(input);
-
-        //String str[] = {"hello", "world", "rotor", "1v1"};
-        //List<String> list = Arrays.asList(str);
-        //checkIfStringIsPalindrome(list);
-    }
-
     private static void printPyramid(int noOfRows) {
         int rowCount = 1;
         System.out.println("Here Is Your Pyramid");
@@ -63,7 +45,43 @@ public class StringInterviewQuestion {
     }
 
     private static Boolean isPalindrome(String str) {
-    StringBuilder builder = new StringBuilder(str);
-    return builder.reverse().toString().equals(str);
+        StringBuilder builder = new StringBuilder(str);
+        return builder.reverse().toString().equals(str);
     }
+
+    private static void duplicateCharCount(String inputString) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : inputString.toCharArray()) {
+            if(map.containsKey(c)){
+                map.put(c,map.get(c)+1);
+            }else{
+                map.put(c,1);
+            }
+        }
+        System.out.println( map);
+
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("************************");
+
+
+        //String input = "Butter";
+        //duplicateCharCount(input);
+
+        //pyramid of numbers
+        //printPyramid(9);
+
+        //String input = "Enter input string to be cleaned from white spaces...!";
+        //RemoveWhiteSpaces
+        //removeWhiteSpaces(input);
+
+        //String str[] = {"hello", "world", "rotor", "1v1"};
+        //List<String> list = Arrays.asList(str);
+        //checkIfStringIsPalindrome(list);
+        System.out.println("************************");
+    }
+
+
 }
